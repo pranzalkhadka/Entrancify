@@ -2,9 +2,11 @@ import streamlit as st
 import pandas as pd
 import matplotlib.pyplot as plt
 
-from utility.utils import topPerformers, cutoff_rank, cutoff_rank_analysis
+from utility.utils import topPerformers, cutoff_rank, cutoff_rank_analysis, statistics, common_merit_lists
 
 ascol_img_path = "/home/pranjal/Downloads/Entrancify/Images/amrit_college.jpg"
+
+college_website_url = "https://ac.tu.edu.np"
 
 ascol_2080_first = pd.read_csv("/home/pranjal/Downloads/Entrancify/2080/first_list/ascol_2080_first.csv")
 ascol_2080_second = pd.read_csv("/home/pranjal/Downloads/Entrancify/2080/second_list/ascol_2080_second.csv")
@@ -17,7 +19,9 @@ ascol_2077_second = pd.read_csv("/home/pranjal/Downloads/Entrancify/2077/second_
 
 
 class Ascol:
+
     def ascol_analysis():
+            
             st.sidebar.header("Amrit Science Campus")
             st.title("About")
             st.write("""Amrit Campus is the first science campus of Nepal, located in Lainchaur, Kathmandu.
@@ -25,7 +29,11 @@ class Ascol:
              ASCOL situated in the heart of Kathmandu Valley-Thamel, is one of the few pure science campus of the country.
              The campus is a governmental institution and is affiliated to Tribhuvan University.
              """)
+            
             st.image(ascol_img_path, use_column_width=True)
+
+            st.subheader("Find more here...")
+            st.markdown(college_website_url)
 
             years = [2077, 2078, 2079, 2080]
             selected_year = st.sidebar.selectbox("Select Year",years)
@@ -47,14 +55,18 @@ class Ascol:
 
                 plt.figure(figsize=(10, 6))
                 plt.plot(cutoff_rank_df['Year'], cutoff_rank_df['Cutoff_Rank'], marker='o', linestyle='-', color='b')
-
                 plt.title('Cutoff Rank Trend')
                 plt.xlabel('Year')
                 plt.ylabel('Rank')
                 plt.grid(True)
                 plt.xticks(cutoff_rank_df['Year'].astype(int))
-
                 st.pyplot(plt.gcf())
+
+                st.title(f"Statistical Breakdown")
+                st.table(statistics(ascol_2080_first))
+
+                st.title(f"Applicants in both First and Second Merit List")
+                st.table(common_merit_lists(ascol_2080_first, ascol_2080_second))
 
 
             elif selected_year == 2080 and selected_list == "second":
@@ -70,14 +82,18 @@ class Ascol:
 
                 plt.figure(figsize=(10, 6))
                 plt.plot(cutoff_rank_df['Year'], cutoff_rank_df['Cutoff_Rank'], marker='o', linestyle='-', color='b')
-
                 plt.title('Cutoff Rank Trend')
                 plt.xlabel('Year')
                 plt.ylabel('Rank')
                 plt.grid(True)
                 plt.xticks(cutoff_rank_df['Year'].astype(int))
-
                 st.pyplot(plt.gcf())
+
+                st.title(f"Statistical Breakdown")
+                st.table(statistics(ascol_2080_second))
+
+                st.title(f"Applicants in both First and Second Merit List")
+                st.table(common_merit_lists(ascol_2080_first, ascol_2080_second))
 
 
             elif selected_year == 2079 and selected_list == "first":
@@ -93,14 +109,18 @@ class Ascol:
 
                 plt.figure(figsize=(10, 6))
                 plt.plot(cutoff_rank_df['Year'], cutoff_rank_df['Cutoff_Rank'], marker='o', linestyle='-', color='b')
-
                 plt.title('Cutoff Rank Trend')
                 plt.xlabel('Year')
                 plt.ylabel('Rank')
                 plt.grid(True)
                 plt.xticks(cutoff_rank_df['Year'].astype(int))
-
                 st.pyplot(plt.gcf())
+
+                st.title(f"Statistical Breakdown")
+                st.table(statistics(ascol_2079_first))
+
+                st.title(f"Applicants in both First and Second Merit List")
+                st.table(common_merit_lists(ascol_2079_first, ascol_2079_second))
 
     
             elif selected_year == 2079 and selected_list == "second":
@@ -116,14 +136,18 @@ class Ascol:
 
                 plt.figure(figsize=(10, 6))
                 plt.plot(cutoff_rank_df['Year'], cutoff_rank_df['Cutoff_Rank'], marker='o', linestyle='-', color='b')
-
                 plt.title('Cutoff Rank Trend')
                 plt.xlabel('Year')
                 plt.ylabel('Rank')
                 plt.grid(True)
                 plt.xticks(cutoff_rank_df['Year'].astype(int))
-
                 st.pyplot(plt.gcf())
+
+                st.title(f"Statistical Breakdown")
+                st.table(statistics(ascol_2079_second))
+
+                st.title(f"Applicants in both First and Second Merit List")
+                st.table(common_merit_lists(ascol_2079_first, ascol_2079_second))
 
 
             elif selected_year == 2078 and selected_list == "first":
@@ -139,14 +163,18 @@ class Ascol:
 
                 plt.figure(figsize=(10, 6))
                 plt.plot(cutoff_rank_df['Year'], cutoff_rank_df['Cutoff_Rank'], marker='o', linestyle='-', color='b')
-
                 plt.title('Cutoff Rank Trend')
                 plt.xlabel('Year')
                 plt.ylabel('Rank')
                 plt.grid(True)
                 plt.xticks(cutoff_rank_df['Year'].astype(int))
-
                 st.pyplot(plt.gcf())
+
+                st.title(f"Statistical Breakdown")
+                st.table(statistics(ascol_2078_first))
+
+                st.title(f"Applicants in both First and Second Merit List")
+                st.table(common_merit_lists(ascol_2078_first, ascol_2078_second))
 
     
             elif selected_year == 2078 and selected_list == "second":
@@ -162,14 +190,18 @@ class Ascol:
 
                 plt.figure(figsize=(10, 6))
                 plt.plot(cutoff_rank_df['Year'], cutoff_rank_df['Cutoff_Rank'], marker='o', linestyle='-', color='b')
-
                 plt.title('Cutoff Rank Trend')
                 plt.xlabel('Year')
                 plt.ylabel('Rank')
                 plt.grid(True)
                 plt.xticks(cutoff_rank_df['Year'].astype(int))
-
                 st.pyplot(plt.gcf())
+
+                st.title(f"Statistical Breakdown")
+                st.table(statistics(ascol_2078_second))
+
+                st.title(f"Applicants in both First and Second Merit List")
+                st.table(common_merit_lists(ascol_2078_first, ascol_2078_second))
 
     
             elif selected_year == 2077 and selected_list == "first":
@@ -185,14 +217,18 @@ class Ascol:
 
                 plt.figure(figsize=(10, 6))
                 plt.plot(cutoff_rank_df['Year'], cutoff_rank_df['Cutoff_Rank'], marker='o', linestyle='-', color='b')
-
                 plt.title('Cutoff Rank Trend')
                 plt.xlabel('Year')
                 plt.ylabel('Rank')
                 plt.grid(True)
                 plt.xticks(cutoff_rank_df['Year'].astype(int))
-
                 st.pyplot(plt.gcf())
+
+                st.title(f"Statistical Breakdown")
+                st.table(statistics(ascol_2077_first))
+
+                st.title(f"Applicants in both First and Second Merit List")
+                st.table(common_merit_lists(ascol_2077_first, ascol_2077_second))
 
     
             elif selected_year == 2077 and selected_list == "second":
@@ -208,11 +244,15 @@ class Ascol:
 
                 plt.figure(figsize=(10, 6))
                 plt.plot(cutoff_rank_df['Year'], cutoff_rank_df['Cutoff_Rank'], marker='o', linestyle='-', color='b')
-
                 plt.title('Cutoff Rank Trend')
                 plt.xlabel('Year')
                 plt.ylabel('Rank')
                 plt.grid(True)
                 plt.xticks(cutoff_rank_df['Year'].astype(int))
-
                 st.pyplot(plt.gcf())
+
+                st.title(f"Statistical Breakdown")
+                st.table(statistics(ascol_2077_second))
+
+                st.title(f"Applicants in both First and Second Merit List")
+                st.table(common_merit_lists(ascol_2077_first, ascol_2077_second))

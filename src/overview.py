@@ -8,7 +8,9 @@ image_path3 = "/home/pranjal/Downloads/Entrancify/Images/3.png"
 image_path4 = "/home/pranjal/Downloads/Entrancify/Images/Reserved.png"
 
 class Overview:
+
     def program_overview():
+        
         st.title("About the Course")
         st.write("""BSc CSIT (Bachelor of Science in Computer Science and Information Technology) 
              is an extensive four-year undergraduate program, spanning eight semesters, offered by Tribhuvan University (TU). 
