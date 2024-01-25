@@ -42,3 +42,13 @@ if user_menu == 'Bhaktapur Multiple Campus':
 
 if user_menu == 'St.Xavier':
     stxavier_analysis()
+
+
+
+for i in range(15):
+    st.sidebar.text("")
+
+
+st.sidebar.title("Connect with Me")
+st.sidebar.write("Email: pranzalkhadka1@gmail.com")
+st.sidebar.write("LinkedIn: [Linkedin](https://www.linkedin.com/in/pranjal-khadka-57bb29246)")
