@@ -17,8 +17,7 @@ stxavier_analysis = StXavier.stxavier_analysis
 
 st.sidebar.title("Merit List Analysis")
 
-# csit_img_path = "/home/pranjal/Downloads/Entrancify/Images/csit.jpg"
-csit_img_path = "/home/pranjal/Downloads/Entrancify/Images/csit.jpg"
+csit_img_path = "https://raw.githubusercontent.com/pranzalkhadka/Entrancify/main/Data/Images/csit.jpg"
 
 
 st.sidebar.image(csit_img_path, use_column_width=True)

@@ -1,11 +1,11 @@
 import streamlit as st
 
-eligibility_img_path = "/home/pranjal/Downloads/Entrancify/Images/eligibility.png"
-admission_img_path = "/home/pranjal/Downloads/Entrancify/Images/admission.png"
-image_path1 = "/home/pranjal/Downloads/Entrancify/Images/1.png"
-image_path2 = "/home/pranjal/Downloads/Entrancify/Images/2.png"
-image_path3 = "/home/pranjal/Downloads/Entrancify/Images/3.png"
-image_path4 = "/home/pranjal/Downloads/Entrancify/Images/Reserved.png"
+eligibility_img_path = "https://raw.githubusercontent.com/pranzalkhadka/Entrancify/main/Data/Images/eligibility.png"
+admission_img_path = "https://raw.githubusercontent.com/pranzalkhadka/Entrancify/main/Data/Images/admission.png"
+image_path1 = "https://raw.githubusercontent.com/pranzalkhadka/Entrancify/main/Data/Images/1.png"
+image_path2 = "https://raw.githubusercontent.com/pranzalkhadka/Entrancify/main/Data/Images/2.png"
+image_path3 = "https://raw.githubusercontent.com/pranzalkhadka/Entrancify/main/Data/Images/3.png"
+image_path4 = "https://raw.githubusercontent.com/pranzalkhadka/Entrancify/main/Data/Images/Reserved.png"
 
 class Overview:
 

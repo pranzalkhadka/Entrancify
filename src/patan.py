@@ -17,14 +17,14 @@ college_website_url = "https://pmc.tu.edu.np"
 # patan_2077_first = pd.read_csv("/home/pranjal/Downloads/Entrancify/2077/first_list/patan_2077_first.csv")
 # patan_2077_second = pd.read_csv("/home/pranjal/Downloads/Entrancify/2077/second_list/patan_2077_second.csv")
 
-patan_2080_first = pd.read_csv("https://raw.githubusercontent.com/pranzalkhadka/Entrancify/main/Data/2080/first_list/patan_2080_first.csv", index_col=0)
-patan_2080_second = pd.read_csv("https://raw.githubusercontent.com/pranzalkhadka/Entrancify/main/Data/2080/second_list/patan_2080_second.csv", index_col=0)
-patan_2079_first = pd.read_csv("https://raw.githubusercontent.com/pranzalkhadka/Entrancify/main/Data/2079/first_list/patan_2079_first.csv", index_col=0)
-patan_2079_second = pd.read_csv("https://raw.githubusercontent.com/pranzalkhadka/Entrancify/main/Data/2079/second_list/patan_2079_second.csv", index_col=0)
-patan_2078_first = pd.read_csv("https://raw.githubusercontent.com/pranzalkhadka/Entrancify/main/Data/2078/first_list/patan_2078_first.csv", index_col=0)
-patan_2078_second = pd.read_csv("https://raw.githubusercontent.com/pranzalkhadka/Entrancify/main/Data/2078/second_list/patan_2078_second.csv", index_col=0)
-patan_2077_first = pd.read_csv("https://raw.githubusercontent.com/pranzalkhadka/Entrancify/main/Data/2077/first_list/patan_2077_first.csv", index_col=0)
-patan_2077_second = pd.read_csv("https://raw.githubusercontent.com/pranzalkhadka/Entrancify/main/Data/2077/second_list/patan_2077_second.csv", index_col=0)
+patan_2080_first = pd.read_csv("https://raw.githubusercontent.com/pranzalkhadka/Entrancify/main/Data/2080/first_list/patan_2080_first.csv")
+patan_2080_second = pd.read_csv("https://raw.githubusercontent.com/pranzalkhadka/Entrancify/main/Data/2080/second_list/patan_2080_second.csv")
+patan_2079_first = pd.read_csv("https://raw.githubusercontent.com/pranzalkhadka/Entrancify/main/Data/2079/first_list/patan_2079_first.csv")
+patan_2079_second = pd.read_csv("https://raw.githubusercontent.com/pranzalkhadka/Entrancify/main/Data/2079/second_list/patan_2079_second.csv")
+patan_2078_first = pd.read_csv("https://raw.githubusercontent.com/pranzalkhadka/Entrancify/main/Data/2078/first_list/patan_2078_first.csv")
+patan_2078_second = pd.read_csv("https://raw.githubusercontent.com/pranzalkhadka/Entrancify/main/Data/2078/second_list/patan_2078_second.csv")
+patan_2077_first = pd.read_csv("https://raw.githubusercontent.com/pranzalkhadka/Entrancify/main/Data/2077/first_list/patan_2077_first.csv")
+patan_2077_second = pd.read_csv("https://raw.githubusercontent.com/pranzalkhadka/Entrancify/main/Data/2077/second_list/patan_2077_second.csv")
 
 class Patan:
 
