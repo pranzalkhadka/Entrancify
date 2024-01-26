@@ -8,15 +8,6 @@ bhaktapur_img_path = "https://raw.githubusercontent.com/pranzalkhadka/Entrancify
 
 college_website_url = "https://bkmc.tu.edu.np"
 
-# bhaktapur_2080_first = pd.read_csv("/home/pranjal/Downloads/final_project/2080/first_list/bhaktapur_2080_first.csv")
-# bhaktapur_2080_second = pd.read_csv("/home/pranjal/Downloads/final_project/2080/second_list/bhaktapur_2080_second.csv")
-# bhaktapur_2079_first = pd.read_csv("/home/pranjal/Downloads/final_project/2079/first_list/bhaktapur_2079_first.csv")
-# bhaktapur_2079_second = pd.read_csv("/home/pranjal/Downloads/final_project/2079/second_list/bhaktapur_2079_second.csv")
-# bhaktapur_2078_first = pd.read_csv("/home/pranjal/Downloads/final_project/2078/first_list/bhaktapur_2078_first.csv")
-# bhaktapur_2078_second = pd.read_csv("/home/pranjal/Downloads/final_project/2078/second_list/bhaktapur_2078_second.csv")
-# bhaktapur_2077_first = pd.read_csv("/home/pranjal/Downloads/final_project/2077/first_list/bhaktapur_2077_first.csv")
-# bhaktapur_2077_second = pd.read_csv("/home/pranjal/Downloads/final_project/2077/second_list/bhaktapur_2077_second.csv")
-
 
 bhaktapur_2080_first = pd.read_csv("https://raw.githubusercontent.com/pranzalkhadka/Entrancify/main/Data/2080/first_list/bhaktapur_2080_first.csv")
 bhaktapur_2080_second = pd.read_csv("https://raw.githubusercontent.com/pranzalkhadka/Entrancify/main/Data/2080/second_list/bhaktapur_2080_second.csv")

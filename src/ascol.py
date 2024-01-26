@@ -8,15 +8,6 @@ ascol_img_path = "https://raw.githubusercontent.com/pranzalkhadka/Entrancify/mai
 
 college_website_url = "https://ac.tu.edu.np"
 
-# ascol_2080_first = pd.read_csv("/home/pranjal/Downloads/Entrancify/2080/first_list/ascol_2080_first.csv")
-# ascol_2080_second = pd.read_csv("/home/pranjal/Downloads/Entrancify/2080/second_list/ascol_2080_second.csv")
-# ascol_2079_first = pd.read_csv("/home/pranjal/Downloads/Entrancify/2079/first_list/ascol_2079_first.csv")
-# ascol_2079_second = pd.read_csv("/home/pranjal/Downloads/Entrancify/2079/second_list/ascol_2079_second.csv")
-# ascol_2078_first = pd.read_csv("/home/pranjal/Downloads/Entrancify/2078/first_list/ascol_2078_first.csv")
-# ascol_2078_second = pd.read_csv("/home/pranjal/Downloads/Entrancify/2078/second_list/ascol_2078_second.csv")
-# ascol_2077_first = pd.read_csv("/home/pranjal/Downloads/Entrancify/2077/first_list/ascol_2077_first.csv")
-# ascol_2077_second = pd.read_csv("/home/pranjal/Downloads/Entrancify/2077/second_list/ascol_2077_second.csv")
-
 
 ascol_2080_first = pd.read_csv("https://raw.githubusercontent.com/pranzalkhadka/Entrancify/main/Data/2080/first_list/ascol_2080_first.csv")
 ascol_2080_second = pd.read_csv("https://raw.githubusercontent.com/pranzalkhadka/Entrancify/main/Data/2080/second_list/ascol_2080_second.csv")

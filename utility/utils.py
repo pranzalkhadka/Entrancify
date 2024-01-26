@@ -4,17 +4,9 @@ import pandas as pd
 def topPerformers(df):
 
 
-    df = df.drop(["S.No."],axis =1)
-    df = df.drop(["Name"],axis =1)
-    if 'Darta No' in df.columns:
-        df = df.drop(columns=['Darta No'])
-    if 'Remarks' in df.columns:
-        df = df.drop(columns=['Remarks'])
-    if 'Score' in df.columns:
-        df = df.drop(columns=['Score'])
+    df = df[['Roll No', 'Rank']]
     df_sorted = df.sort_values(by='Rank')
     top_10_performers = df_sorted.head(10)
-    top_10_performers =  top_10_performers[['Rank', 'Roll No']].reset_index(drop=True)
 
     return top_10_performers
 

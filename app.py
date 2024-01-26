@@ -45,10 +45,11 @@ if user_menu == 'St.Xavier':
 
 
 
-for i in range(15):
+for i in range(14):
     st.sidebar.text("")
 
 
 st.sidebar.title("Connect with Me")
 st.sidebar.write("Email: pranzalkhadka1@gmail.com")
 st.sidebar.write("LinkedIn: [Linkedin](https://www.linkedin.com/in/pranjal-khadka-57bb29246)")
+st.sidebar.write("Github: [Github](https://github.com/pranzalkhadka/Entrancify)")
