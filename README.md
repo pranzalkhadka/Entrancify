@@ -9,7 +9,7 @@ Empowering students to make well-informed choices, Entrancify is a practical gui
 ## 📖 Quick Index
 * [🌐 Application](https://entrancify.streamlit.app/)
 * [🤝 How to Contribute](#-how-to-contribute)
-* [💻 Improvements and Suggestions](#-Improvements and Suggestions)
+* [💻 Improvements and Suggestions](#-improvements-and-suggestions)
 * [❓ FAQ](#-faq)
 
 ## 🌐 Application
