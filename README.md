@@ -7,9 +7,9 @@ As candidates navigate cutoff ranks and analyze historical admission trends, Ent
 Empowering students to make well-informed choices, Entrancify is a practical guide in the academic journey. Armed with knowledge about past trends and statistical analyses, aspirants gain a competitive edge in securing admission to their desired colleges. Entrancify is more than a tool; it's a reliable partner, ensuring that every CSIT aspirant faces the future with confidence and purpose.
 
 ## 📖 Quick Index
-* [🌐 Application](https://your-website-url.com)
+* [🌐 Application](https://entrancify.streamlit.app/)
 * [🤝 How to Contribute](#-how-to-contribute)
-* [💻 Improvements and Suggestions](#-installation)
+* [💻 Improvements and Suggestions](#-Improvements and Suggestions)
 * [❓ FAQ](#-faq)
 
 ## 🌐 Application
