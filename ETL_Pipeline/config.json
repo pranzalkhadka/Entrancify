@@ -1,0 +1,36 @@
+{
+    "colleges": [
+        {
+            "name": "Patan",
+            "url": "https://pmc.tu.edu.np/notices",
+            "html_file_path": "patan_content.html",
+            "csv_file_path": "patan_notices.csv",
+            "schema": "PATAN",
+            "table": "PATAN_NOTICES"
+        },
+        {
+            "name": "Bhaktapur",
+            "url": "https://bkmc.tu.edu.np/notices",
+            "html_file_path": "bhaktapur_content.html",
+            "csv_file_path": "bhaktapur_notices.csv",
+            "schema": "BHAKTAPUR",
+            "table": "BHAKTAPUR_NOTICES"
+        },
+        {
+            "name": "Ascol",
+            "url": "https://ascol.edu.np/notices",
+            "html_file_path": "ascol_content.html",
+            "csv_file_path": "ascol_notices.csv",
+            "schema": "ASCOL",
+            "table": "ASCOL_NOTICES"
+        },
+        {
+            "name": "St_xaviers",
+            "url": "https://www.sxc.edu.np/notices",
+            "html_file_path": "st_xavier_content.html",
+            "csv_file_path": "st_xavier_notices.csv",
+            "schema": "ST_XAVIER",
+            "table": "ST_XAVIER_NOTICES"
+        }
+    ]
+}

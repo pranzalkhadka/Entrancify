@@ -1,7 +1,7 @@
 credentials = {
     "USER": "pranjal",
     "PASSWORD": "password",
-    "ACCOUNT": "uobeyia-cu08330",
+    "ACCOUNT": "uobedasyia-cu0865330",
     "DATABASE": "ENTRANCIFY",
     "WAREHOUSE": "COMPUTE_WH",
 }
