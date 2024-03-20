@@ -79,6 +79,7 @@ target/
 .ipynb_checkpoints
 
 # IPython
+config.py
 profile_default/
 ipython_config.py
 
