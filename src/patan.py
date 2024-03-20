@@ -4,6 +4,27 @@ import matplotlib.pyplot as plt
 
 from utility.utils import topPerformers, cutoff_rank, cutoff_rank_analysis, statistics, common_merit_lists
 
+import snowflake.connector
+from config import credentials
+
+conn = snowflake.connector.connect(
+            user=credentials["USER"],
+            password=credentials["PASSWORD"],
+            account=credentials["ACCOUNT"],
+            warehouse=credentials["WAREHOUSE"],
+            database=credentials["DATABASE"]
+        )
+
+schema = "PATAN"
+table = "PATAN_NOTICES"
+
+cur = conn.cursor()
+cur.execute(f"USE SCHEMA {schema}")
+get_data = f"SELECT * FROM {table}"
+cur.execute(get_data)
+lst = cur.fetchall()
+df = pd.DataFrame(lst, columns=[desc[0] for desc in cur.description])
+
 patan_img_path = "https://raw.githubusercontent.com/pranzalkhadka/Entrancify/main/Data/Images/patan_college.jpeg"
 
 college_website_url = "https://pmc.tu.edu.np"
@@ -71,6 +92,9 @@ class Patan:
                 st.title(f"Applicants in both First and Second Merit List")
                 st.table(common_merit_lists(patan_2080_first, patan_2080_second))
 
+                st.title(f"New Notices")
+                st.table(df)
+
 
             elif selected_year == 2080 and selected_list == "second":
                 top_performers_data = topPerformers(patan_2080_second)
@@ -97,6 +121,9 @@ class Patan:
 
                 st.title(f"Applicants in both First and Second Merit List")
                 st.table(common_merit_lists(patan_2080_first, patan_2080_second))
+
+                st.title(f"New Notices")
+                st.table(df)
 
 
             elif selected_year == 2079 and selected_list == "first":
@@ -125,6 +152,9 @@ class Patan:
                 st.title(f"Applicants in both First and Second Merit List")
                 st.table(common_merit_lists(patan_2079_first, patan_2079_second))
 
+                st.title(f"New Notices")
+                st.table(df)
+
     
             elif selected_year == 2079 and selected_list == "second":
                 top_performers_data = topPerformers(patan_2079_second)
@@ -151,6 +181,9 @@ class Patan:
 
                 st.title(f"Applicants in both First and Second Merit List")
                 st.table(common_merit_lists(patan_2079_first, patan_2079_second))
+
+                st.title(f"New Notices")
+                st.table(df)
 
 
             elif selected_year == 2078 and selected_list == "first":
@@ -179,6 +212,9 @@ class Patan:
                 st.title(f"Applicants in both First and Second Merit List")
                 st.table(common_merit_lists(patan_2078_first, patan_2078_second))
 
+                st.title(f"New Notices")
+                st.table(df)
+
     
             elif selected_year == 2078 and selected_list == "second":
                 top_performers_data = topPerformers(patan_2078_second)
@@ -205,6 +241,9 @@ class Patan:
 
                 st.title(f"Applicants in both First and Second Merit List")
                 st.table(common_merit_lists(patan_2078_first, patan_2078_second))
+
+                st.title(f"New Notices")
+                st.table(df)
 
     
             elif selected_year == 2077 and selected_list == "first":
@@ -233,6 +272,9 @@ class Patan:
                 st.title(f"Applicants in both First and Second Merit List")
                 st.table(common_merit_lists(patan_2077_first, patan_2077_second))
 
+                st.title(f"New Notices")
+                st.table(df)
+
     
             elif selected_year == 2077 and selected_list == "second":
                 top_performers_data = topPerformers(patan_2077_second)
@@ -259,3 +301,6 @@ class Patan:
 
                 st.title(f"Applicants in both First and Second Merit List")
                 st.table(common_merit_lists(patan_2077_first, patan_2077_second))
+
+                st.title(f"New Notices")
+                st.table(df)

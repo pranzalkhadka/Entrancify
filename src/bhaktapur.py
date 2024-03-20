@@ -4,6 +4,27 @@ import matplotlib.pyplot as plt
 
 from utility.utils import topPerformers, cutoff_rank, cutoff_rank_analysis, statistics, common_merit_lists
 
+import snowflake.connector
+from config import credentials
+
+conn = snowflake.connector.connect(
+            user=credentials["USER"],
+            password=credentials["PASSWORD"],
+            account=credentials["ACCOUNT"],
+            warehouse=credentials["WAREHOUSE"],
+            database=credentials["DATABASE"]
+        )
+
+schema = "BHAKTAPUR"
+table = "BHAKTAPUR_NOTICES"
+
+cur = conn.cursor()
+cur.execute(f"USE SCHEMA {schema}")
+get_data = f"SELECT * FROM {table}"
+cur.execute(get_data)
+lst = cur.fetchall()
+df = pd.DataFrame(lst, columns=[desc[0] for desc in cur.description])
+
 bhaktapur_img_path = "https://raw.githubusercontent.com/pranzalkhadka/Entrancify/main/Data/Images/bhaktapur_college.jpg"
 
 college_website_url = "https://bkmc.tu.edu.np"
@@ -74,6 +95,9 @@ class Bhaktapur:
                 st.title(f"Applicants in both First and Second Merit List")
                 st.table(common_merit_lists(bhaktapur_2080_first, bhaktapur_2080_second))
 
+                st.title(f"New Notices")
+                st.table(df)
+
 
             elif selected_year == 2080 and selected_list == "second":
                 top_performers_data = topPerformers(bhaktapur_2080_second)
@@ -100,6 +124,9 @@ class Bhaktapur:
 
                 st.title(f"Applicants in both First and Second Merit List")
                 st.table(common_merit_lists(bhaktapur_2080_first, bhaktapur_2080_second))
+
+                st.title(f"New Notices")
+                st.table(df)
 
 
             elif selected_year == 2079 and selected_list == "first":
@@ -128,6 +155,9 @@ class Bhaktapur:
                 st.title(f"Applicants in both First and Second Merit List")
                 st.table(common_merit_lists(bhaktapur_2079_first, bhaktapur_2079_second))
 
+                st.title(f"New Notices")
+                st.table(df)
+
     
             elif selected_year == 2079 and selected_list == "second":
                 top_performers_data = topPerformers(bhaktapur_2079_second)
@@ -154,6 +184,9 @@ class Bhaktapur:
 
                 st.title(f"Applicants in both First and Second Merit List")
                 st.table(common_merit_lists(bhaktapur_2079_first, bhaktapur_2079_second))
+
+                st.title(f"New Notices")
+                st.table(df)
 
     
             elif selected_year == 2078 and selected_list == "first":
@@ -182,6 +215,9 @@ class Bhaktapur:
                 st.title(f"Applicants in both First and Second Merit List")
                 st.table(common_merit_lists(bhaktapur_2078_first, bhaktapur_2078_second))
 
+                st.title(f"New Notices")
+                st.table(df)
+
     
             elif selected_year == 2078 and selected_list == "second":
                 top_performers_data = topPerformers(bhaktapur_2078_second)
@@ -208,6 +244,9 @@ class Bhaktapur:
 
                 st.title(f"Applicants in both First and Second Merit List")
                 st.table(common_merit_lists(bhaktapur_2078_first, bhaktapur_2078_second))
+
+                st.title(f"New Notices")
+                st.table(df)
 
 
             elif selected_year == 2077 and selected_list == "first":
@@ -236,6 +275,9 @@ class Bhaktapur:
                 st.title(f"Applicants in both First and Second Merit List")
                 st.table(common_merit_lists(bhaktapur_2077_first, bhaktapur_2077_second))
 
+                st.title(f"New Notices")
+                st.table(df)
+
     
             elif selected_year == 2077 and selected_list == "second":
                 top_performers_data = topPerformers(bhaktapur_2077_second)
@@ -262,3 +304,6 @@ class Bhaktapur:
 
                 st.title(f"Applicants in both First and Second Merit List")
                 st.table(common_merit_lists(bhaktapur_2077_first, bhaktapur_2077_second))
+
+                st.title(f"New Notices")
+                st.table(df)

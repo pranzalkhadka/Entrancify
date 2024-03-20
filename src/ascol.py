@@ -4,6 +4,27 @@ import matplotlib.pyplot as plt
 
 from utility.utils import topPerformers, cutoff_rank, cutoff_rank_analysis, statistics, common_merit_lists
 
+import snowflake.connector
+from config import credentials
+
+conn = snowflake.connector.connect(
+            user=credentials["USER"],
+            password=credentials["PASSWORD"],
+            account=credentials["ACCOUNT"],
+            warehouse=credentials["WAREHOUSE"],
+            database=credentials["DATABASE"]
+        )
+
+schema = "ASCOL"
+table = "ASCOL_NOTICES"
+
+cur = conn.cursor()
+cur.execute(f"USE SCHEMA {schema}")
+get_data = f"SELECT * FROM {table}"
+cur.execute(get_data)
+lst = cur.fetchall()
+df = pd.DataFrame(lst, columns=[desc[0] for desc in cur.description])
+
 ascol_img_path = "https://raw.githubusercontent.com/pranzalkhadka/Entrancify/main/Data/Images/amrit_college.jpg"
 
 college_website_url = "https://ac.tu.edu.np"
@@ -69,6 +90,9 @@ class Ascol:
                 st.title(f"Applicants in both First and Second Merit List")
                 st.table(common_merit_lists(ascol_2080_first, ascol_2080_second))
 
+                st.title(f"New Notices")
+                st.table(df)
+
 
             elif selected_year == 2080 and selected_list == "second":
                 top_performers_data = topPerformers(ascol_2080_second)
@@ -95,6 +119,9 @@ class Ascol:
 
                 st.title(f"Applicants in both First and Second Merit List")
                 st.table(common_merit_lists(ascol_2080_first, ascol_2080_second))
+
+                st.title(f"New Notices")
+                st.table(df)
 
 
             elif selected_year == 2079 and selected_list == "first":
@@ -123,6 +150,9 @@ class Ascol:
                 st.title(f"Applicants in both First and Second Merit List")
                 st.table(common_merit_lists(ascol_2079_first, ascol_2079_second))
 
+                st.title(f"New Notices")
+                st.table(df)
+
     
             elif selected_year == 2079 and selected_list == "second":
                 top_performers_data = topPerformers(ascol_2079_second)
@@ -149,6 +179,9 @@ class Ascol:
 
                 st.title(f"Applicants in both First and Second Merit List")
                 st.table(common_merit_lists(ascol_2079_first, ascol_2079_second))
+
+                st.title(f"New Notices")
+                st.table(df)
 
 
             elif selected_year == 2078 and selected_list == "first":
@@ -177,6 +210,9 @@ class Ascol:
                 st.title(f"Applicants in both First and Second Merit List")
                 st.table(common_merit_lists(ascol_2078_first, ascol_2078_second))
 
+                st.title(f"New Notices")
+                st.table(df)
+
     
             elif selected_year == 2078 and selected_list == "second":
                 top_performers_data = topPerformers(ascol_2078_second)
@@ -203,6 +239,9 @@ class Ascol:
 
                 st.title(f"Applicants in both First and Second Merit List")
                 st.table(common_merit_lists(ascol_2078_first, ascol_2078_second))
+
+                st.title(f"New Notices")
+                st.table(df)
 
     
             elif selected_year == 2077 and selected_list == "first":
@@ -231,6 +270,9 @@ class Ascol:
                 st.title(f"Applicants in both First and Second Merit List")
                 st.table(common_merit_lists(ascol_2077_first, ascol_2077_second))
 
+                st.title(f"New Notices")
+                st.table(df)
+
     
             elif selected_year == 2077 and selected_list == "second":
                 top_performers_data = topPerformers(ascol_2077_second)
@@ -257,3 +299,7 @@ class Ascol:
 
                 st.title(f"Applicants in both First and Second Merit List")
                 st.table(common_merit_lists(ascol_2077_first, ascol_2077_second))
+
+                st.title(f"New Notices")
+                st.table(df)
+                
