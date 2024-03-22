@@ -46,6 +46,7 @@ def extract_notices(url):
 
 notices = extract_notices(url)
 df = pd.DataFrame(notices)
+df = df[df['Link'] != "No link available"]
 df = df.drop('Image Source', axis=1)
 
 
