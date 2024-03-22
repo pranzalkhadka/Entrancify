@@ -1,6 +1,8 @@
 import streamlit as st
 import pandas as pd
 import matplotlib.pyplot as plt
+import requests
+from bs4 import BeautifulSoup
 
 from utility.utils import topPerformers, cutoff_rank, cutoff_rank_analysis, statistics, common_merit_lists
 
@@ -24,6 +26,22 @@ from utility.utils import topPerformers, cutoff_rank, cutoff_rank_analysis, stat
 # cur.execute(get_data)
 # lst = cur.fetchall()
 # df = pd.DataFrame(lst, columns=[desc[0] for desc in cur.description])
+
+url = "https://amritcampus.edu.np/blog/"
+
+r = requests.get(url, verify=False)
+soup = BeautifulSoup(r.content, "html.parser")
+
+recent_div = soup.find('div', id='recent-posts-4')
+
+if recent_div:
+    anchor_tags = recent_div.find_all('a', href=True)
+    titles = [tag.get_text() for tag in anchor_tags]
+    links = [tag['href'] for tag in anchor_tags]
+    df = pd.DataFrame({'Title': titles, 'Link': links})
+else:
+    print("No New Notices!")
+
 
 ascol_img_path = "https://raw.githubusercontent.com/pranzalkhadka/Entrancify/main/Data/Images/amrit_college.jpg"
 
@@ -90,8 +108,8 @@ class Ascol:
                 st.title(f"Applicants in both First and Second Merit List")
                 st.table(common_merit_lists(ascol_2080_first, ascol_2080_second))
 
-                # st.title(f"New Notices")
-                # st.table(df)
+                st.title(f"New Notices")
+                st.table(df)
 
 
             elif selected_year == 2080 and selected_list == "second":
@@ -120,8 +138,8 @@ class Ascol:
                 st.title(f"Applicants in both First and Second Merit List")
                 st.table(common_merit_lists(ascol_2080_first, ascol_2080_second))
 
-                # st.title(f"New Notices")
-                # st.table(df)
+                st.title(f"New Notices")
+                st.table(df)
 
 
             elif selected_year == 2079 and selected_list == "first":
@@ -150,8 +168,8 @@ class Ascol:
                 st.title(f"Applicants in both First and Second Merit List")
                 st.table(common_merit_lists(ascol_2079_first, ascol_2079_second))
 
-                # st.title(f"New Notices")
-                # st.table(df)
+                st.title(f"New Notices")
+                st.table(df)
 
     
             elif selected_year == 2079 and selected_list == "second":
@@ -180,8 +198,8 @@ class Ascol:
                 st.title(f"Applicants in both First and Second Merit List")
                 st.table(common_merit_lists(ascol_2079_first, ascol_2079_second))
 
-                # st.title(f"New Notices")
-                # st.table(df)
+                st.title(f"New Notices")
+                st.table(df)
 
 
             elif selected_year == 2078 and selected_list == "first":
@@ -210,8 +228,8 @@ class Ascol:
                 st.title(f"Applicants in both First and Second Merit List")
                 st.table(common_merit_lists(ascol_2078_first, ascol_2078_second))
 
-                # st.title(f"New Notices")
-                # st.table(df)
+                st.title(f"New Notices")
+                st.table(df)
 
     
             elif selected_year == 2078 and selected_list == "second":
@@ -240,8 +258,8 @@ class Ascol:
                 st.title(f"Applicants in both First and Second Merit List")
                 st.table(common_merit_lists(ascol_2078_first, ascol_2078_second))
 
-                # st.title(f"New Notices")
-                # st.table(df)
+                st.title(f"New Notices")
+                st.table(df)
 
     
             elif selected_year == 2077 and selected_list == "first":
@@ -270,8 +288,8 @@ class Ascol:
                 st.title(f"Applicants in both First and Second Merit List")
                 st.table(common_merit_lists(ascol_2077_first, ascol_2077_second))
 
-                # st.title(f"New Notices")
-                # st.table(df)
+                st.title(f"New Notices")
+                st.table(df)
 
     
             elif selected_year == 2077 and selected_list == "second":
@@ -300,6 +318,6 @@ class Ascol:
                 st.title(f"Applicants in both First and Second Merit List")
                 st.table(common_merit_lists(ascol_2077_first, ascol_2077_second))
 
-                # st.title(f"New Notices")
-                # st.table(df)
+                st.title(f"New Notices")
+                st.table(df)
                 

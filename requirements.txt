@@ -4,3 +4,5 @@ camelot-py[cv]
 PyPDF2~=2.0
 matplotlib
 snowflake
+bs4
+requests

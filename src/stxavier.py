@@ -1,6 +1,8 @@
 import streamlit as st
 import pandas as pd
 import matplotlib.pyplot as plt
+import requests
+from bs4 import BeautifulSoup
 
 from utility.utils import topPerformers, cutoff_rank, cutoff_rank_analysis2, statistics, common_merit_lists
 
@@ -24,6 +26,27 @@ from utility.utils import topPerformers, cutoff_rank, cutoff_rank_analysis2, sta
 # cur.execute(get_data)
 # lst = cur.fetchall()
 # df = pd.DataFrame(lst, columns=[desc[0] for desc in cur.description])
+
+url = "https://www.sxc.edu.np/notice"
+
+def extract_notices(url):
+    r = requests.get(url, verify=False)
+    soup = BeautifulSoup(r.content, "html.parser")
+
+    notices = []
+    for li in soup.find_all("li"):
+        topic = li.find("h5", class_="topic")
+        if topic:
+            title = topic.text.strip()
+            link = li.find("a")["href"] if li.find("a") else "No link available"
+            img_src = li.find("img")["src"] if li.find("img") else "No image available"
+            notices.append({"Title": title, "Link": link, "Image Source": img_src})
+    
+    return notices
+
+notices = extract_notices(url)
+df = pd.DataFrame(notices)
+
 
 st_xavier_img_path = "https://raw.githubusercontent.com/pranzalkhadka/Entrancify/main/Data/Images/st_xavier_college.jpeg"
 

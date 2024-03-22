@@ -1,6 +1,8 @@
 import streamlit as st
 import pandas as pd
 import matplotlib.pyplot as plt
+import requests
+from bs4 import BeautifulSoup
 
 from utility.utils import topPerformers, cutoff_rank, cutoff_rank_analysis, statistics, common_merit_lists
 
@@ -24,6 +26,29 @@ from utility.utils import topPerformers, cutoff_rank, cutoff_rank_analysis, stat
 # cur.execute(get_data)
 # lst = cur.fetchall()
 # df = pd.DataFrame(lst, columns=[desc[0] for desc in cur.description])
+
+
+url = "https://bkmc.tu.edu.np/notices"
+
+def extract_notices(url):
+    r = requests.get(url, verify=False)
+    soup = BeautifulSoup(r.content, "html.parser")
+
+    notices = []
+    for li in soup.find_all("li"):
+        topic = li.find("h5", class_="topic")
+        if topic:
+            title = topic.text.strip()
+            link = li.find("a")["href"] if li.find("a") else "No link available"
+            img_src = li.find("img")["src"] if li.find("img") else "No image available"
+            notices.append({"Title": title, "Link": link, "Image Source": img_src})
+    
+    return notices
+
+notices = extract_notices(url)
+df = pd.DataFrame(notices)
+df = df.drop('Image Source', axis=1)
+
 
 bhaktapur_img_path = "https://raw.githubusercontent.com/pranzalkhadka/Entrancify/main/Data/Images/bhaktapur_college.jpg"
 
@@ -95,8 +120,8 @@ class Bhaktapur:
                 st.title(f"Applicants in both First and Second Merit List")
                 st.table(common_merit_lists(bhaktapur_2080_first, bhaktapur_2080_second))
 
-                # st.title(f"New Notices")
-                # st.table(df)
+                st.title(f"New Notices")
+                st.table(df)
 
 
             elif selected_year == 2080 and selected_list == "second":
@@ -125,8 +150,8 @@ class Bhaktapur:
                 st.title(f"Applicants in both First and Second Merit List")
                 st.table(common_merit_lists(bhaktapur_2080_first, bhaktapur_2080_second))
 
-                # st.title(f"New Notices")
-                # st.table(df)
+                st.title(f"New Notices")
+                st.table(df)
 
 
             elif selected_year == 2079 and selected_list == "first":
@@ -155,8 +180,8 @@ class Bhaktapur:
                 st.title(f"Applicants in both First and Second Merit List")
                 st.table(common_merit_lists(bhaktapur_2079_first, bhaktapur_2079_second))
 
-                # st.title(f"New Notices")
-                # st.table(df)
+                st.title(f"New Notices")
+                st.table(df)
 
     
             elif selected_year == 2079 and selected_list == "second":
@@ -185,8 +210,8 @@ class Bhaktapur:
                 st.title(f"Applicants in both First and Second Merit List")
                 st.table(common_merit_lists(bhaktapur_2079_first, bhaktapur_2079_second))
 
-                # st.title(f"New Notices")
-                # st.table(df)
+                st.title(f"New Notices")
+                st.table(df)
 
     
             elif selected_year == 2078 and selected_list == "first":
@@ -215,8 +240,8 @@ class Bhaktapur:
                 st.title(f"Applicants in both First and Second Merit List")
                 st.table(common_merit_lists(bhaktapur_2078_first, bhaktapur_2078_second))
 
-                # st.title(f"New Notices")
-                # st.table(df)
+                st.title(f"New Notices")
+                st.table(df)
 
     
             elif selected_year == 2078 and selected_list == "second":
@@ -245,8 +270,8 @@ class Bhaktapur:
                 st.title(f"Applicants in both First and Second Merit List")
                 st.table(common_merit_lists(bhaktapur_2078_first, bhaktapur_2078_second))
 
-                # st.title(f"New Notices")
-                # st.table(df)
+                st.title(f"New Notices")
+                st.table(df)
 
 
             elif selected_year == 2077 and selected_list == "first":
@@ -275,8 +300,8 @@ class Bhaktapur:
                 st.title(f"Applicants in both First and Second Merit List")
                 st.table(common_merit_lists(bhaktapur_2077_first, bhaktapur_2077_second))
 
-                # st.title(f"New Notices")
-                # st.table(df)
+                st.title(f"New Notices")
+                st.table(df)
 
     
             elif selected_year == 2077 and selected_list == "second":
@@ -305,5 +330,5 @@ class Bhaktapur:
                 st.title(f"Applicants in both First and Second Merit List")
                 st.table(common_merit_lists(bhaktapur_2077_first, bhaktapur_2077_second))
 
-                # st.title(f"New Notices")
-                # st.table(df)
+                st.title(f"New Notices")
+                st.table(df)
