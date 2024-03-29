@@ -6,6 +6,7 @@ from src.ascol import Ascol
 from src.patan import Patan
 from src.bhaktapur import Bhaktapur
 from src.stxavier import StXavier
+from src import chat
 
 
 program_overview = Overview.program_overview
@@ -25,7 +26,7 @@ st.sidebar.image(csit_img_path, use_column_width=True)
 
 user_menu = st.sidebar.radio(
     'Select an Option',
-    ('Program Overview','Amrit Science Campus', 'Patan Multiple Campus', 'Bhaktapur Multiple Campus', 'St.Xavier')
+    ('Program Overview','Amrit Science Campus', 'Patan Multiple Campus', 'Bhaktapur Multiple Campus', 'St.Xavier', 'Chatbot')
 )
 
 if user_menu == 'Program Overview':
@@ -42,6 +43,9 @@ if user_menu == 'Bhaktapur Multiple Campus':
 
 if user_menu == 'St.Xavier':
     stxavier_analysis()
+
+if user_menu == 'Chatbot':
+    chat.main()
 
 
 

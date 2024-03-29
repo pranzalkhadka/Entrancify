@@ -6,3 +6,7 @@ matplotlib
 snowflake
 bs4
 requests
+langchain
+PyPDF2
+langchain_google_genai
+faiss-cpu
