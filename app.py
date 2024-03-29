@@ -6,7 +6,7 @@ from src.ascol import Ascol
 from src.patan import Patan
 from src.bhaktapur import Bhaktapur
 from src.stxavier import StXavier
-from src import chat
+from src import chatbot
 
 
 program_overview = Overview.program_overview
@@ -45,7 +45,7 @@ if user_menu == 'St.Xavier':
     stxavier_analysis()
 
 if user_menu == 'Chatbot':
-    chat.main()
+    chatbot.main()
 
 
 

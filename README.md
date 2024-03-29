@@ -14,7 +14,7 @@ Empowering students to make well-informed choices, Entrancify is a practical gui
 
 ## 🌐 Application
 
-Visit our official streamlit application : [https://entrancify.streamlit.app/](https://entrancify.streamlit.app/)
+Visit the official streamlit application : [https://entrancify.streamlit.app/](https://entrancify.streamlit.app/)
 
 ## 🤝 How to Contribute
 
