@@ -121,6 +121,8 @@ api_key = st.secrets["GOOGLE_API_KEY"]
 #                 st.success("Done")
 
 
+
+
 def get_text_chunks(text):
     text_splitter = RecursiveCharacterTextSplitter(chunk_size=10000, chunk_overlap=1000)
     chunks = text_splitter.split_text(text)
@@ -161,10 +163,5 @@ def main():
     if user_question and api_key: 
         user_input(user_question, api_key)
 
-    with st.sidebar:
-        st.title("Menu:")
-        st.markdown("Provide the raw text in the code.")
-        if api_key:
-            text_chunks = get_text_chunks(raw_text)
-            get_vector_store(text_chunks, api_key)
-            st.success("Text processed and vector store created.")
+    text_chunks = get_text_chunks(raw_text)
+    get_vector_store(text_chunks, api_key)
